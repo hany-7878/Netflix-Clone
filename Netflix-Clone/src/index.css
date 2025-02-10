@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+
+  :root{
+    --font-base:'Lexend', sans-serif;
+     --font-second-base: 'inter', sans-serif;
+     --bg-color:#111;
+     --primary-color:#ffffff;
+     --secondary-color:#e50914;
+  }
+  * {
+    font-family: 'Bebas Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+  }
+body{
+  background: #111;
+}

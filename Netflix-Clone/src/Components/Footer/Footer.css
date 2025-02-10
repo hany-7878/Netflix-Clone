@@ -1,0 +1,136 @@
+.footer_container {
+    background-color: black;
+    color: gray;
+    padding: 40px 10%;
+    text-align: center;
+  }
+  
+  /* FAQ Section */
+  
+.footer_faq {
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer_faq h3 {
+    font-size: 20px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.footer_faq ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.footer_faq ul li {
+    font-size: 14px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    transition: color 0.3s;
+    width: 100%;
+    text-align: center;
+}
+
+.footer_faq ul li:hover {
+    color: white;
+}
+  
+  /* Email Subscription */
+  .footer_email {
+    margin: 20px 0;
+  }
+  
+  .footer_email p {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .email_input {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .email_input input {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 4px;
+    background: transparent;
+    color: white;
+  }
+  
+  .email_input button {
+    padding: 10px 15px;
+    border: none;
+    background-color: #e50914;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+  }
+  
+  .email_input button:hover {
+    background-color: #b20710;
+  }
+  /* Footer Links (4 Columns) */
+.footer_links {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    gap: 20px;
+  }
+  
+  .footer_links ul {
+    list-style: none;
+    padding: 0;
+    flex: 1;
+    min-width: 150px;
+  }
+  
+  .footer_links ul li {
+    font-size: 14px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .footer_links ul li:hover {
+    color: white;
+  }
+  
+  /* Copyright */
+  .footer_copy {
+    margin-top: 20px;
+  }
+  
+  .footer_copy p {
+    font-size: 12px;
+    color: gray;}
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .email_input {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .email_input input {
+      width: 100%;
+    }
+  
+    .footer_links ul {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
