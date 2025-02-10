@@ -1,19 +1,90 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+/* Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
 
+/* Root Variables */
+:root {
+  --font-base: 'Lexend', sans-serif;
+  --font-second-base: 'Inter', sans-serif;
+  --bg-color: #111;
+  --primary-color: #ffffff;
+  --secondary-color: #e50914;
+}
 
-  :root{
-    --font-base:'Lexend', sans-serif;
-     --font-second-base: 'inter', sans-serif;
-     --bg-color:#111;
-     --primary-color:#ffffff;
-     --secondary-color:#e50914;
+/* Global Reset */
+* {
+  font-family: 'Netflix Sans', Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Ensures consistent box model */
+}
+
+/* Body */
+body {
+  background-color: var(--bg-color); /* Set background color to dark */
+  color: var(--primary-color); /* White text color for contrast */
+  font-family: var(--font-base); /* Default to Lexend for easy reading */
+  line-height: 1.6;
+}
+
+/* Heading Styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-base); /* Use Lexend for headings */
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+
+/* Links */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--secondary-color); /* Change link color on hover */
+  text-decoration: underline;
+}
+
+/* Buttons */
+button {
+  font-family: var(--font-second-base); /* Inter font for buttons */
+  font-weight: 500;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+  background-color: darken(var(--secondary-color), 10%);
+  color: black;
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--secondary-color);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+
+/* Responsive Design: Adjust for smaller screens */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px; /* Reduce font size for smaller screens */
   }
-  * {
-    font-family: 'Bebas Neue', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: content-box;
+
+  button {
+    width: 100%; /* Make buttons full width on small screens */
   }
-body{
-  background: #111;
 }
