@@ -1,136 +1,196 @@
 .footer_container {
-    background-color: black;
-    color: gray;
-    padding: 40px 10%;
-    text-align: center;
-  }
-  
-  /* FAQ Section */
-  
+  background-color: black;
+  color: gray;
+  padding: 40px 10%;
+  text-align: center;
+}
+
+/* FAQ Section */
 .footer_faq {
-    margin-bottom: 20px;
-    width: 100%;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+  background-color: #111; /* Dark background */
+  padding: 20px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 20px;
 }
 
 .footer_faq h3 {
-    font-size: 20px;
-    color: white;
-    margin-bottom: 10px;
+  font-size: 20px;
+  color: white;
+  margin-bottom: 15px;
 }
 
 .footer_faq ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
-.footer_faq ul li {
-    font-size: 14px;
-    margin-bottom: 5px;
-    cursor: pointer;
-    transition: color 0.3s;
-    width: 100%;
-    text-align: center;
+.faq_item {
+  background-color: #222; /* Darker box */
+  color: white;
+  padding: 15px;
+  width: 100%;
+  text-align: center;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
 }
 
-.footer_faq ul li:hover {
-    color: white;
+.faq_item:hover {
+  background-color: #333;
 }
-  
-  /* Email Subscription */
-  .footer_email {
-    margin: 20px 0;
-  }
-  
-  .footer_email p {
-    font-size: 16px;
-    margin-bottom: 10px;
-  }
-  
-  .email_input {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-  }
-  
-  .email_input input {
-    width: 300px;
-    padding: 10px;
-    border: 1px solid gray;
-    border-radius: 4px;
-    background: transparent;
-    color: white;
-  }
-  
-  .email_input button {
-    padding: 10px 15px;
-    border: none;
-    background-color: #e50914;
-    color: white;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 4px;
-  }
-  
-  .email_input button:hover {
-    background-color: #b20710;
-  }
-  /* Footer Links (4 Columns) */
+
+.faq_answer {
+  background-color: #333;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  color: #ddd;
+  font-size: 14px;
+  display: none; /* Hidden by default */
+}
+
+.faq_item.active .faq_answer {
+  display: block; /* Show when active */
+}
+.faq_item {
+  cursor: pointer;
+  padding: 10px;
+  border-bottom: 1px solid #555;
+  transition: all 0.3s ease-in-out;
+}
+
+.faq_item .faq_question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+.faq_item .faq_answer {
+  display: none;
+  padding-top: 5px;
+}
+
+.faq_item.open .faq_answer {
+  display: block;
+}
+
+
+/* Email Subscription */
+.footer_email {
+  margin: 20px 0;
+}
+
+.footer_email p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.email_input {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.email_input input {
+  width: 300px;
+  padding: 10px;
+  border: 1px solid gray;
+  border-radius: 4px;
+  background: transparent;
+  color: white;
+}
+
+.email_input button {
+  padding: 10px 15px;
+  border: none;
+  background-color: #e50914;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+.email_input button:hover {
+  background-color: #b20710;
+}
+
+/* Footer Links (4 Columns) */
 .footer_links {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin-top: 20px;
-    gap: 20px;
-  }
-  
-  .footer_links ul {
-    list-style: none;
-    padding: 0;
-    flex: 1;
-    min-width: 150px;
-  }
-  
-  .footer_links ul li {
-    font-size: 14px;
-    margin-bottom: 5px;
-    cursor: pointer;
-    transition: color 0.3s;
-  }
-  
-  .footer_links ul li:hover {
-    color: white;
-  }
-  
-  /* Copyright */
-  .footer_copy {
-    margin-top: 20px;
-  }
-  
-  .footer_copy p {
-    font-size: 12px;
-    color: gray;}
-  
-  /* Responsive */
-  @media (max-width: 768px) {
-    .email_input {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  gap: 20px;
+}
+
+.footer_links ul {
+  list-style: none;
+  padding: 0;
+  flex: 1;
+  min-width: 150px;
+}
+
+.footer_links ul li {
+  font-size: 14px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.footer_links ul li:hover {
+  color: white;
+}
+
+/* Social Media Icons */
+.footer_socials {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.footer_socials svg {
+  color: gray;
+  font-size: 24px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.footer_socials svg:hover {
+  color: white;
+}
+
+/* Copyright */
+.footer_copy {
+  margin-top: 20px;
+}
+
+.footer_copy p {
+  font-size: 12px;
+  color: gray;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .email_input {
       flex-direction: column;
       align-items: center;
-    }
-  
-    .email_input input {
+  }
+
+  .email_input input {
       width: 100%;
-    }
-  
-    .footer_links ul {
+  }
+
+  .footer_links ul {
       flex-direction: column;
       align-items: center;
-    }
   }
-  
+}

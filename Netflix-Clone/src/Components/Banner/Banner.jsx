@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "../../Utils/axios";
 import requests from "../../Utils/requests";
 import "./banner.css";
+import PlayCircleOutlineOutlinedIcon from '@mui/icons-material/PlayCircleOutlineOutlined';
 
 const Banner = () => {
   const [movie, setMovie] = useState(null);
@@ -43,7 +44,7 @@ const Banner = () => {
       <div className="banner_contents">
         <h1 className="banner_title">{movie?.title || movie?.name || movie?.original_name}</h1>
         <div className="banner_buttons">
-          <button className="banner_button">Play</button>
+          <button className="banner_button"> Play<PlayCircleOutlineOutlinedIcon className="play_icon"/> </button>
           <button className="banner_button">My List</button>
         </div>
         <h2 className="banner_description">{truncate(movie?.overview, 150)}</h2>

@@ -1,31 +1,55 @@
-/* Header.css */
 .Header_outer_container {
   position: sticky;
   top: 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   background-color: rgb(36, 36, 36);
   color: white;
-  transition: all 0.5s ease-in-out;
-  z-index: 1;
+  z-index: 1; /* Ensure the header is above the content */
   width: 100%;
-  padding: 1rem 2rem; /* Add padding for better spacing */
+  padding: 15px 0;
+  height: 80px; /* Define a fixed height for the header */
 }
 
-/* Container */
 .header_container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: 90%;
   max-width: 1250px;
   margin: 0 auto;
-  padding: 0; /* Removed fixed padding for better responsiveness */
+  padding: 0 20px;
 }
 
-/* Left Section */
-.header_left ul {
+.header_left {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.menu_icon {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 30px;
+  color: #e50914;
+  cursor: pointer;
+}
+
+.logo {
+  width: 20%;
+  height: auto;
+  transition: width 0.3s ease-in-out;
+}
+
+.header_center {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.nav_links {
   display: flex;
   list-style: none;
   margin: 0;
@@ -33,23 +57,23 @@
   align-items: center;
 }
 
-.header_left ul li {
-  color: white;
-  margin-right: 1.5rem; /* Use rem for consistent spacing */
-  font-size: 1.2rem; /* Adjusted font size for readability */
-  font-weight: 500;
+.nav_links li {
+  margin-right: 30px;
+  font-size: 1rem;
+  font-weight: 400;
   cursor: pointer;
   transition: color 0.3s ease-in-out;
 }
 
-/* Netflix Logo */
-.header_left ul li img {
-  width: 8rem; /* Fixed logo size */
-  height: auto;
-  margin-right: 2rem;
+.nav_links li a {
+  color: white;
+  text-decoration: none;
 }
 
-/* Right Section */
+.nav_links li:hover {
+  color: #e50914;
+}
+
 .header_right ul {
   display: flex;
   list-style: none;
@@ -59,80 +83,254 @@
 }
 
 .header_right ul li {
-  display: flex;
-  align-items: center;
-  font-size: 1.2rem; /* Consistent font size */
-  margin-left: 2rem; /* Consistent margin */
+  margin-left: 30px;
   cursor: pointer;
+  font-size: 1rem;
   transition: color 0.3s ease-in-out;
 }
 
-/* Hover Effect */
-.header_left ul li:hover,
 .header_right ul li:hover {
   color: #e50914;
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-  .Header_outer_container {
-    padding: 1rem; /* Reduce padding for tablets */
-  }
-
-  .header_left ul li {
-    font-size: 1rem; /* Smaller font for tablets */
-    margin-right: 1rem; /* Adjust spacing for smaller devices */
-  }
-
-  .header_left ul li img {
-    width: 7rem; /* Smaller logo size for tablets */
-    margin-right: 1.5rem;
-  }
-
-  .header_right ul li {
-    font-size: 1rem; /* Adjust font size */
-    margin-left: 1.5rem;
-  }
+/* Search Section */
+.search_input_container {
+  display: flex;
+  align-items: center;
+  background-color: #e50914;
+  border-radius: 2px;
 }
 
+.search_input {
+  padding: 5px;
+  border: none;
+  outline: none;
+  width: 100%;
+  max-width: 100%;
+  font-size: 1rem;
+  color: white;
+  background-color: transparent;
+}
+
+/* Mobile Styles */
 @media (max-width: 768px) {
+  .menu_icon {
+    display: block;
+  }
   .Header_outer_container {
-    padding: 0.5rem; /* Further reduce padding for mobile */
+    width: 75%;
   }
 
-  .header_left ul li {
-    font-size: 0.9rem; /* Smaller font for mobile */
-    margin-right: 0.5rem; /* Reduced margin */
+  .header_center {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: rgb(36, 36, 36);
+    z-index: 999;
+    transition: all 0.3s ease-in-out;
+    align-items: center;
+    padding-top: 20px;
+    width: 100%;
   }
 
-  .header_left ul li img {
-    width: 6rem; /* Even smaller logo size for mobile */
-    margin-right: 1rem;
+  .header_center.open {
+    display: flex;
+  }
+
+  .nav_links {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav_links li {
+    margin: 10px 0;
+    font-size: 1.125rem;
+  }
+
+  .nav_links.open {
+    display: flex;
+  }
+
+  /* Adjust logo for smaller screens */
+  .logo {
+    width: 30%;
+    max-width: 150px;
+  }
+
+  .header_container {
+    width: 100%;
+    padding: 0;
+  }
+
+  .Header_outer_container {
+    padding: 5px 0;
   }
 
   .header_right ul li {
-    font-size: 0.9rem; /* Smaller font size for mobile */
-    margin-left: 1rem; /* Reduced margin */
+    font-size: 1rem;
+    margin-left: 15px;
   }
 }
 
-@media (max-width: 480px) {
+/* For larger screens (above 1200px) */
+@media (min-width: 1200px) {
+  .menu_icon {
+    display: none;
+  }
+
+  .header_center {
+    display: flex;
+  }
+
+  .nav_links {
+    display: flex;
+  }
+
+  .logo {
+    width: 100px;
+  }
+
+  /* Adjust header layout */
   .Header_outer_container {
-    padding: 0.5rem; /* Maintain minimal padding */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    height: 80px; /* Ensures the header height remains fixed */
   }
 
-  .header_left ul li {
-    font-size: 0.8rem; /* Very small font size for mobile */
-    margin-right: 0.5rem; /* Adjust margin */
+  
+}
+
+
+
+
+/* Base styles for Header */
+.Header_outer_container {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(36, 36, 36);
+  color: white;
+  z-index: 100;
+  width: 100%;
+  padding: 15px 0;
+  height: 80px;
+}
+
+/* Adjusting header container */
+.header_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Left section of the header */
+.header_left {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+/* Center section (navigation) */
+.header_center {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .menu_icon {
+    display: block;
   }
 
-  .header_left ul li img {
-    width: 5rem; /* Smaller logo for mobile */
-    margin-right: 0.5rem;
+  /* Mobile header container adjustments */
+  .Header_outer_container {
+    width: 100%; /* Ensure full width */
+    padding: 5px 0; /* Add padding for better mobile spacing */
   }
 
+  .header_center {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: rgb(36, 36, 36);
+    z-index: 999;
+    align-items: center;
+    padding-top: 20px;
+    width: 100%;
+  }
+
+  /* Show the mobile menu when 'open' class is added */
+  .header_center.open {
+    display: flex;
+  }
+
+  /* Mobile logo adjustments */
+  .logo {
+    width: 40%; 
+    max-width: 120px; 
+    transition: width 0.3s ease-in-out;
+  }
+
+  /* Navigation links on mobile */
+  .nav_links {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav_links li {
+    margin: 10px 0;
+    font-size: 1.125rem;
+  }
+
+  /* Adjust header right for mobile */
   .header_right ul li {
-    font-size: 0.8rem; /* Smaller font for mobile */
-    margin-left: 1rem; /* Reduced spacing */
+    font-size: 1rem;
+    margin-left: 15px;
+  }
+}
+
+/* Larger screens (above 1200px) */
+@media (min-width: 1200px) {
+  .menu_icon {
+    display: none;
+  }
+
+  .header_center {
+    display: flex;
+  }
+
+  .nav_links {
+    display: flex;
+  }
+
+  /* Logo sizing for larger screens */
+  .logo {
+    width: 100px; 
+  }
+
+  .Header_outer_container {
+    padding: 15px 0; 
   }
 }

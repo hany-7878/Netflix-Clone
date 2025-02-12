@@ -8,7 +8,7 @@
   --font-second-base: 'Inter', sans-serif;
   --bg-color: #111;
   --primary-color: #ffffff;
-  --secondary-color: #e50914;
+  --secondary-color: #ff232e;
 }
 
 /* Global Reset */
@@ -50,8 +50,8 @@ a:hover {
 button {
   font-family: var(--font-second-base); /* Inter font for buttons */
   font-weight: 500;
-  background-color: var(--secondary-color);
-  color: var(--primary-color);
+  background-color: var(--primary-color);
+  color: var( --bg-color);
   border: none;
   border-radius: 4px;
   padding: 10px 20px;
@@ -60,7 +60,7 @@ button {
 }
 
 button:hover {
-  background-color: darken(var(--secondary-color), 10%);
+  background-color: var(--secondary-color);
   color: black;
 }
 
@@ -84,7 +84,5 @@ button:hover {
     font-size: 14px; /* Reduce font size for smaller screens */
   }
 
-  button {
-    width: 100%; /* Make buttons full width on small screens */
-  }
+
 }
