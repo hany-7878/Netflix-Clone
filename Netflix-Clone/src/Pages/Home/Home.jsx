@@ -1,40 +1,22 @@
-// import React from 'react'
-// import Header from '../../Components/Header/Header.jsx'
-// import Banner from '../../Components/Banner/banner.jsx'
-// import Footer from '../../Components/Footer/Footer'
-// import RowList from '../../Components/Rows/RowsList/RowList.jsx'
 
-
-// function Home() {
-//   return (
-//     <div>
-//       <Header/>
-//       <Banner/>
-//       <RowList/>
-//       <Footer/>
-//     </div>
-//   )
-// }
-
-// export default Home
 import React, { useState } from "react";
 import Header from "../../Components/Header/Header.jsx";
-import Banner from "../../Components/Banner/banner.jsx";
+import Banner from "../../Components/Banner/Banner.jsx";
 import RowList from "../../Components/Rows/RowsList/RowList.jsx";
 import Footer from "../../Components/Footer/Footer";
 
 function Home() {
-  const [searchTerm, setSearchTerm] = useState("");  // State to store search term
+  const [searchTerm, setSearchTerm] = useState("");  
 
   const handleSearch = (term) => {
-    setSearchTerm(term);  // Update search term
+    setSearchTerm(term);  
   };
 
   return (
     <div>
-      <Header onSearch={handleSearch} />  {/* Pass handleSearch to Header */}
+      <Header onSearch={handleSearch} />  
       <Banner />
-      <RowList searchTerm={searchTerm} />  {/* Pass searchTerm to RowList */}
+      <RowList searchTerm={searchTerm} />  
       <Footer />
     </div>
   );

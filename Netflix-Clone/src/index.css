@@ -23,7 +23,7 @@
 body {
   background-color: var(--bg-color); /* Set background color to dark */
   color: var(--primary-color); /* White text color for contrast */
-  font-family: var(--font-base); /* Default to Lexend for easy reading */
+  font-family: var(--font-base); 
   line-height: 1.6;
 }
 

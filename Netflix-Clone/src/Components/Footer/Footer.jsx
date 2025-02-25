@@ -47,7 +47,6 @@ function Footer() {
 
   return (
     <div className="footer_container">
-      {/* FAQ Section */}
       <div className="footer_faq">
         <h3>Frequently Asked Questions</h3>
         <ul className="faq_list">

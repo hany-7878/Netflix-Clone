@@ -45,9 +45,7 @@ function Header({ onSearch }) {
 
         <div className="header_right">
           <ul>
-            <li className="search_icon">
-              <SearchIcon />
-            </li>
+           
             <li className="search_input_container">
               <input
                 type="text"
@@ -56,7 +54,11 @@ function Header({ onSearch }) {
                 value={searchInput}
                 onChange={handleSearchChange}
               />
+              
+              <SearchIcon className="search_icon" />
+            
             </li>
+            
             <li><NotificationsIcon /></li>
             <li><AccountBoxIcon /></li>
             <li><ArrowDropDownIcon /></li>

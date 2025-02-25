@@ -10,7 +10,7 @@ const RowList = ({ searchTerm }) => {
         title="NETFLIX ORIGINALS"
         fetchUrl={requests.fetchNetflixOriginals}
         isLargeRow={true}
-        searchTerm={searchTerm} // Pass searchTerm to Row
+        searchTerm={searchTerm} 
       />
       <Row
         title="Trending now"

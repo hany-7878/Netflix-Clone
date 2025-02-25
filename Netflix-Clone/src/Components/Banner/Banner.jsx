@@ -6,7 +6,7 @@ import PlayCircleOutlineOutlinedIcon from '@mui/icons-material/PlayCircleOutline
 
 const Banner = () => {
   const [movie, setMovie] = useState(null);
-  const API_KEY = import.meta.env.VITE_REACT_APP_API_KEY; // Access the API key from the .env file
+  const API_KEY = import.meta.env.VITE_REACT_APP_API_KEY; 
 
   useEffect(() => {
     const fetchData = async () => {
@@ -24,7 +24,7 @@ const Banner = () => {
       }
     };
     fetchData();
-  }, [API_KEY]);
+  }, []);
 
   const truncate = (str, n) => {
     return str?.length > n ? str.substring(0, n - 1) + "..." : str;
