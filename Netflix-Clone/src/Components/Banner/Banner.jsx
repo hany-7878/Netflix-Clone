@@ -13,9 +13,9 @@ const Banner = () => {
       try {
         // Include API key in the request URL
         const response = await axios.get(requests.fetchNetflixOriginals, {
-          params: {
-            api_key: API_KEY,
-          },
+          // params: {
+          //   api_key: API_KEY,
+          // },
         });
         const randomMovie = response.data.results[Math.floor(Math.random() * response.data.results.length)];
         setMovie(randomMovie);
@@ -38,7 +38,7 @@ const Banner = () => {
     <header className="banner" style={{
       backgroundSize: "cover",
       backgroundImage: `url(https://image.tmdb.org/t/p/original/${movie?.backdrop_path})`,
-      backgroundPosition: "center center",
+      backgroundPosition: "center",
       backgroundRepeat: "no-repeat"
     }}>
       <div className="banner_contents">

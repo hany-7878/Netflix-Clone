@@ -15,8 +15,8 @@ const Row = ({ title, fetchUrl, isLargeRow, searchTerm }) => {
   useEffect(() => {
     const fetchMovies = async () => {
       try {
-        console.log("Fetching from URL:", fetchUrl);
         const response = await axios.get(fetchUrl);
+        console.log(fetchUrl)
         console.log("Full API Response:", response);
         setMovies(response.data?.results || []);
       } catch (error) {
@@ -99,3 +99,4 @@ const Row = ({ title, fetchUrl, isLargeRow, searchTerm }) => {
 };
 
 export default Row;
+

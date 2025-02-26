@@ -11,3 +11,4 @@ const Root = () => (
 );
 
 createRoot(document.getElementById('root')).render(<Root />);
+

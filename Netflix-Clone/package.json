@@ -5,12 +5,12 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-   "dev": "vite",
-  "build": "vite build",
-  "lint": "eslint .",
-  "preview": "vite preview",
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d dist"
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -18,10 +18,11 @@
     "@mui/icons-material": "^6.4.3",
     "@mui/material": "^6.4.3",
     "axios": "^1.7.9",
+    "bcryptjs": "^3.0.2",
     "movie-trailer": "^3.2.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-router-dom": "^7.1.5",
+    "react-router-dom": "^7.2.0",
     "react-youtube": "^10.1.0"
   },
   "devDependencies": {
