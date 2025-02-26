@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../Header/Header.css";
+import "../../Components/Header/Header.css";
 import Netflix from "../../assets/Images/Logonetflix.png";
 import SearchIcon from "@mui/icons-material/Search";
 import NotificationsIcon from "@mui/icons-material/Notifications";
