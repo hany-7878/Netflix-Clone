@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import "../../Components/Header/Header.css";
 import Netflix from "../../assets/Images/Logonetflix.png";
@@ -9,9 +10,10 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { Link } from "react-router-dom";
 
-function Header({ onSearch }) {
+function Header({ onSearch, onLogout }) {  // Accept onLogout as a prop
   const [searchInput, setSearchInput] = useState("");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);  // Dropdown for profile menu
 
   const handleSearchChange = (e) => {
     setSearchInput(e.target.value);
@@ -20,6 +22,10 @@ function Header({ onSearch }) {
 
   const handleMenuToggle = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleDropdownToggle = () => {
+    setIsDropdownOpen(!isDropdownOpen);
   };
 
   return (
@@ -45,7 +51,6 @@ function Header({ onSearch }) {
 
         <div className="header_right">
           <ul>
-           
             <li className="search_input_container">
               <input
                 type="text"
@@ -54,22 +59,28 @@ function Header({ onSearch }) {
                 value={searchInput}
                 onChange={handleSearchChange}
               />
-              
               <SearchIcon className="search_icon" />
+            </li>
+            <li><NotificationsIcon /></li>
+            
+            {/* Profile Dropdown */}
+            <li className="account_icon" onClick={handleDropdownToggle}>
+              <AccountBoxIcon />
+              <ArrowDropDownIcon />
+              
+              {isDropdownOpen && (
+                <div className="dropdown_menu">
+                  
+                </div>
+              )}
             
             </li>
-            
-            <li><NotificationsIcon /></li>
-            <li><AccountBoxIcon /></li>
-            <li><ArrowDropDownIcon /></li>
           </ul>
         </div>
+        <button className="logout_button" onClick={onLogout}>Logout</button>
       </div>
     </div>
   );
 }
 
 export default Header;
-
-
-

@@ -1,3 +1,4 @@
+
 import "./App.css";
 import Home from "./Pages/Home/Home";
 import Login from "./Pages/Login/Login";
@@ -21,11 +22,20 @@ function App() {
     setIsLoggedIn(true);
   };
 
+  // Handle logout
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    localStorage.removeItem("isLoggedIn"); // Remove login status
+  };
+
   return (
     <Routes>
+      {/* Default Route ("/") should redirect based on login status */}
+      <Route path="/" element={<Navigate to={isLoggedIn ? "/home" : "/login"} />} />
+
       <Route
         path="/home"
-        element={isLoggedIn ? <Home /> : <Navigate to="/login" />}
+        element={isLoggedIn ? <Home onLogout={handleLogout} /> : <Navigate to="/login" />}
       />
       <Route
         path="/login"
