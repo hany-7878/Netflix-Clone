@@ -1,44 +1,41 @@
-
-import './App.css'
-import Home from "./Pages/Home/Home"
-import Login from './Pages/Login/Login'
+import "./App.css";
+import Home from "./Pages/Home/Home";
+import Login from "./Pages/Login/Login";
+import { Router, Routes, Route, Navigate } from "react-router-dom";
 import { useState } from "react";
 
 function App() {
-  // Manage state to toggle between Login and Home
+  // Manage authentication state
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isSignUp, setIsSignUp] = useState(false);
 
-  // Handle successful login
+  // Handle login
   const handleLoginSuccess = () => {
     setIsLoggedIn(true);
   };
 
-  // Toggle to sign-up view
-  const handleSignUpClick = () => {
-    setIsSignUp(true);
-  };
-
-  // Toggle to login view
-  const handleLoginClick = () => {
-    setIsSignUp(false);
-  };
-
   return (
-    <div className="App">
-      {isLoggedIn ? (
-        <Home />
-      ) : (
-        <Login
-          onLoginSuccess={handleLoginSuccess}
-          isSignUp={isSignUp}
-          handleSignUpClick={handleSignUpClick}
-          handleLoginClick={handleLoginClick}
+    <Router>
+      <Routes>
+        {/* Redirect to login if not logged in */}
+        <Route
+          path="/"
+          element={isLoggedIn ? <Home /> : <Navigate to="/login" />}
         />
-      )}
-    </div>
+        <Route
+          path="/login"
+          element={
+            <Login
+              onLoginSuccess={handleLoginSuccess}
+              isSignUp={isSignUp}
+              handleSignUpClick={() => setIsSignUp(true)}
+              handleLoginClick={() => setIsSignUp(false)}
+            />
+          }
+        />
+      </Routes>
+    </Router>
   );
 }
 
 export default App;
-
